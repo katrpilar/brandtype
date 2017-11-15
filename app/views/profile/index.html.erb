@@ -1,0 +1,25 @@
+
+        <%= form_for @brand, :html => {:multipart => true} do |f| %>
+          <%= f.error_messages %>
+          <%= f.hidden_field :brandname %>
+          
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Upload Logo</span>
+              <%= f.file_field :logo %>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+          <p>
+          <%= f.submit %>
+          </p>
+          <% end %>
+      <div id="logo">
+        <%= for logo in @brand.logos %>
+          <div class="logo">
+            <%= image_tag @brand.logo_url.to_s %>
+            <% end %>
+            </div>
+      </div>

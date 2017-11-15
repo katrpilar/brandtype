@@ -1,0 +1,2 @@
+class PrkitController < ApplicationController
+end

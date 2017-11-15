@@ -1,0 +1,2 @@
+class EmpathymapController < ApplicationController
+end

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<head>
+<%= stylesheet_link_tag "application", media: "all" %>
+<%= javascript_include_tag 'application' %>
+<!--<nav>
+    <div class="nav-wrapper  deep-orange darken-1">
+      <div class="container">
+        <div class="col s12">
+          <a href="/businesses/new" class="breadcrumb">Basic Info</a>
+          <a href="/branding" class="breadcrumb">Branding</a>
+          <a href="/lookbook" class="breadcrumb">Lookbook</a>
+          <a href="/focus" class="breadcrumb">Focus</a>
+          <a href="/team" class="breadcrumb">Team</a>
+        </div>
+      </div>
+    </div>
+</nav>-->
+<br>
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab col s3"><a class="active" href="businesses/new">Start Here</a></li>
+        <li class="tab col s3"><a href="brand/new">Branding</a></li>
+        <li class="tab col s3"><a href="/strategy">Strategy</a></li>
+        <li class="tab col s3"><a href="#test4">Structure</a></li>
+        <li class="tab col s3"><a href="#test4">Product</a></li>
+        <li class="tab col s3"><a href="#test4">Marketing</a></li>
+        <li class="tab col s3"><a href="#test4">Money</a></li>
+      </ul>
+    </div>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="section">
+  <h4 class="center-align">Let's Get Started</h4>
+  </div>
+  <div class="divider"></div>
+</div>
+
+<!--<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>-->
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l6">
+        <h5 class="center-align">Business Basics</h5>
+      <%= form_with scope: :business, url:businesses_path, method: :post do |form| %>
+      <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header active">Business Information</div>
+            <div class="collapsible-body">
+              <span>
+                  <p class="input-field">
+                  <%= form.label :brandname, for: "brandname", id:"brandname" %>
+                  <%= form.text_field :brandname, id:"brandname" %>
+                  </p>
+
+                  <p class="input-field">
+                  <%= form.label :legalname, for: "legalname", id:"legalname" %>
+                  <%= form.text_field :legalname, id:"legalname" %>
+                  </p>
+
+                  <p class="input-field">
+                  <%= form.label :website, for: "website", id:"website" %>
+                  <%= form.text_field :website, id:"website" %>
+                  </p>
+
+                  <div class="row">
+                      <div class="col s6 l6">
+                        <p>Sales focus</p>
+                          <p>
+                          <%= form.check_box :b2b, id:"b2b" %>
+                          <%= form.label :b2b, for: "b2b", id:"b2b" %>
+                          </p>
+
+                          <p>
+                          <%= form.check_box :b2c, id:"b2c" %>
+                          <%= form.label :b2c, for: "b2c", id:"b2c" %>
+                          </p>
+
+                          <p>
+                          <%= form.check_box :both, id:"both" %>
+                          <%= form.label :both, for: "both", id:"both" %>
+                          </p>
+
+                      </div>
+                      <div class="col s6 l6">
+                        <p>Service or Good?</p>
+                          <p>
+                          <%= form.check_box :service, id:"service" %>
+                          <%= form.label :service, for: "service", id:"service" %>
+                          </p>
+
+                          <p>
+                          <%= form.check_box :Good, id:"Good" %>
+                          <%= form.label :Good, for: "Good", id:"Good" %>
+                          </p>
+
+                          <p>
+                          <%= form.check_box :both, id:"both" %>
+                          <%= form.label :both, for: "both", id:"both" %>
+                          </p>
+                      </div>
+                  </div>
+              </span>
+            </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Executive Summary</div>
+              <div class="collapsible-body">
+                <span>
+                  <p class="input-field">
+                  <i class="material-icons prefix">mode_edit</i>
+                  <%= form.label :Executive_Summary, for: "icon_prefix2" %>
+                  <%= form.text_area :Executive_Summary, class: "materialize-textarea", id: "icon_prefix2" %>
+                  </p>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header active">Problem You Solve</div>
+              <div class="collapsible-body">
+                <span>
+                    <p class="input-field">
+                    <%= form.label :First_Problem, for: "First_Problem", id:"First_Problem" %>
+                    <%= form.text_field :First_Problem, id:"First_Problem" %>
+                    </p>
+
+                    <p class="input-field">
+                    <%= form.label :Second_Problem, for: "Second_Problem", id:"Second_Problem" %>
+                    <%= form.text_field :Second_Problem, id:"Second_Problem" %>
+                    </p>
+
+                    <p class="input-field">
+                    <%= form.label :Third_Problem, for: "Third_Problem", id:"Third_Problem" %>
+                    <%= form.text_field :Third_Problem, id:"Third_Problem" %>
+                    </p>
+                </span>
+              </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Proposed Target Market</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Target_Market, for: "icon_prefix2" %>
+                    <%= form.text_area :Target_Market, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header active">Your Solution to the Problem</div>
+                <div class="collapsible-body">
+                  <span>
+                      <p class="input-field">
+                      <%= form.label :First_Solution, for: "First_Solution", id:"First_Solution" %>
+                      <%= form.text_field :First_Solution, id:"First_Solution" %>
+                      </p>
+
+                      <p class="input-field">
+                      <%= form.label :Second_Solution, for: "Second_Solution", id:"Second_Solution" %>
+                      <%= form.text_field :Second_Solution, id:"Second_Solution" %>
+                      </p>
+
+                      <p class="input-field">
+                      <%= form.label :Third_Solution, for: "Third_Solution", id:"Third_Solution" %>
+                      <%= form.text_field :Third_Solution, id:"Third_Solution" %>
+                      </p>
+                  </span>
+                </div>
+                </li>
+                <li>
+                  <div class="collapsible-header active">Competition</div>
+                  <div class="collapsible-body">
+                    <span>
+                        <p class="input-field">
+                        <%= form.label :First_Competitor, for: "First_CompetitorFirst_Competitor", id:"First_Competitor" %>
+                        <%= form.text_field :First_Competitor, id:"First_Competitor" %>
+                        </p>
+
+                        <p class="input-field">
+                        <%= form.label :Second_Competitor, for: "Second_Competitor", id:"Second_Competitor" %>
+                        <%= form.text_field :Second_Competitor, id:"Second_Competitor" %>
+                        </p>
+
+                        <p class="input-field">
+                        <%= form.label :Third_Competitor, for: "Third_Competitor", id:"Third_Competitor" %>
+                        <%= form.text_field :Third_Competitor, id:"Third_Competitor" %>
+                        </p>
+                    </span>
+                  </div>
+                  </li>
+      </ul>
+
+
+          <p class="btn waves-effect waves-light deep-orange darken-1">
+          <%= form.submit %>
+          </p>
+
+        <% end %>
+         <%# if !@businesses.blank? %>
+          <%# for item in @businesses %>
+            <%#= item.brand_name %> <%#= item.legal_name %> <%#= item.business_url %> <br>
+          <%# end %>
+        <%# else %>
+        <%# end %>
+      </div>
+
+      <div class="col s12 l6">
+        <h5 class="center-align">The Vision</h5>
+          <%= form_with scope: :business, url:businesses_path, method: :post do |form| %>
+          <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header">Vision Statement</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Vision_Statement, for: "icon_prefix2" %>
+                    <%= form.text_area :Vision_Statement, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Values and Ethics</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Values_Ethics, for: "icon_prefix2" %>
+                    <%= form.text_area :Values_Ethics, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Transparency Proposition</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Transparency_Prop, for: "icon_prefix2" %>
+                    <%= form.text_area :Transparency_Prop, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Mission Statement</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Customer_Facing, for: "icon_prefix2" %>
+                    <%= form.text_area :Customer_Facing, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Team_Facing, for: "icon_prefix2" %>
+                    <%= form.text_area :Team_Facing, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Company_Facing, for: "icon_prefix2" %>
+                    <%= form.text_area :Company_Facing, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Unfair Advantage</div>
+                <div class="collapsible-body">
+                  <span>
+                    <p class="input-field">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <%= form.label :Unfair_Advantage, for: "icon_prefix2" %>
+                    <%= form.text_area :Unfair_Advantage, class: "materialize-textarea", id: "icon_prefix2" %>
+                    </p>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Value Proposition</div>
+                <div class="collapsible-body">
+                  <span>
+                      <p class="input-field">
+                      <%= form.label :Value_Propositition, for: "Value_Propositition", id:"Value_Propositition" %>
+                      <%= form.text_field :Value_Propositition, id:"Value_Propositition" %>
+                      </p>
+                      </span>
+                      </div>
+                      </li>
+          </ul>
+              <p class="btn waves-effect waves-light deep-orange darken-1">
+              <%= form.submit %>
+              </p>
+
+            <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+class BrandvoiceController < ApplicationController
+end

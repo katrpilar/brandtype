@@ -1,0 +1,2 @@
+module VisionboardHelper
+end

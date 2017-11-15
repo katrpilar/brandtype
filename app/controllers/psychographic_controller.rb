@@ -1,0 +1,2 @@
+class PsychographicController < ApplicationController
+end
